@@ -5,6 +5,8 @@ object TicketSolverMainForm: TTicketSolverMainForm
   Height = 263
   Caption = 'TicketSolverGUI'
   Color = clBtnFace
+  Constraints.MinHeight = 263
+  Constraints.MinWidth = 640
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -23,7 +25,7 @@ object TicketSolverMainForm: TTicketSolverMainForm
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -11
+    Font.Height = -13
     Font.Name = 'Bookman Old Style'
     Font.Style = []
     ParentFont = False
