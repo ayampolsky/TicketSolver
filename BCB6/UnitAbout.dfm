@@ -5,7 +5,7 @@ object FormAbout: TFormAbout
   BorderStyle = bsDialog
   Caption = 'About'
   ClientHeight = 183
-  ClientWidth = 192
+  ClientWidth = 248
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,7 +20,7 @@ object FormAbout: TFormAbout
   object Panel2: TPanel
     Left = 0
     Top = 0
-    Width = 192
+    Width = 248
     Height = 183
     Align = alClient
     BevelOuter = bvNone
@@ -28,7 +28,7 @@ object FormAbout: TFormAbout
     object LabelAuthor: TLabel
       Left = 8
       Top = 109
-      Width = 177
+      Width = 233
       Height = 44
       Alignment = taCenter
       AutoSize = False
@@ -45,7 +45,7 @@ object FormAbout: TFormAbout
     object LabelVersion: TLabel
       Left = 8
       Top = 90
-      Width = 177
+      Width = 233
       Height = 13
       Alignment = taCenter
       AutoSize = False
@@ -62,7 +62,7 @@ object FormAbout: TFormAbout
     object Label4: TLabel
       Left = 0
       Top = 8
-      Width = 192
+      Width = 241
       Height = 13
       Alignment = taCenter
       AutoSize = False
@@ -79,7 +79,7 @@ object FormAbout: TFormAbout
     object LabelDescription: TLabel
       Left = 8
       Top = 29
-      Width = 177
+      Width = 233
       Height = 52
       AutoSize = False
       Caption = 'Description'
@@ -93,7 +93,7 @@ object FormAbout: TFormAbout
       WordWrap = True
     end
     object Button1: TButton
-      Left = 59
+      Left = 86
       Top = 156
       Width = 75
       Height = 25
