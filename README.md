@@ -9,8 +9,8 @@ digits into multi-digit number).
 
 This program can be useful to verify one's own calculations when finding a
 combination of operations and brackets between digits of public transport ticket
-which gives an expression with a result of 100, that is an amazing mathematical
-game during a commute.
+number which gives an expression with a result of 100, that is an amazing
+mathematical game during a commute.
 
 Any number of digits is supported but only calculations for up to 7 can be done
 on modern processor for reasonable time.
@@ -27,9 +27,9 @@ platforms and compilers
 
 The following operation systems and compilers are supported:
 
-Windows / Borland C++ Builder 6
-Windows / Microsoft Visual Studio 2013
-Linux / g++
+* Windows / Borland C++ Builder 6
+* Windows / Microsoft Visual Studio 2013
+* Linux / g++
 
 Project for C++ Builder 6 creates executable with GUI. Others create executable
 with CLI.
