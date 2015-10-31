@@ -47,9 +47,15 @@ license
 
 This program is distributed under the terms of the GNU GPLv2.
 
+GUI icons are from Fugue Icons set by Yusuke Kamiyamane.
+<http://p.yusukekamiyamane.com/>
+
 contact
 -------
 
 Author of this program is Alexander Yampolsky.
 For questions, bug reports, ideas, contributions etc. please contact
 yampa@yandex.ru.
+
+For source distribution and binary releases see
+https://github.com/ayampolsky/TicketSolver
