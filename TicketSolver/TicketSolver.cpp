@@ -7,7 +7,7 @@
 #include <errno.h>
 #include "TicketSolver.h"
 
-#if defined(WIN32) || defined(__WIN32__)
+#if !defined(WIN32) && !defined(__WIN32__)
 #define CLK_TCK CLOCKS_PER_SEC
 #endif
 
