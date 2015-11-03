@@ -19,14 +19,22 @@ __fastcall TTicketSolverMainForm::TTicketSolverMainForm(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TTicketSolverMainForm::BitBtnSolveClick(TObject *Sender)
 {
-  if (std::string (Edit1->Text.c_str ()).find_first_not_of ("0123456789") != std::string::npos) {
+  if (Edit1->Text.IsEmpty() || (std::string (Edit1->Text.c_str ()).find_first_not_of ("0123456789") != std::string::npos)) {
     std::string line = std::string ("Wrong argument ").append (Edit1->Text.c_str ()).append (", please enter only digits.");
     TicketSolverMainForm->Memo1->Lines->Add (line.c_str ());
     return;
   }
 
-  //ticketSolver->SolveSingle (Edit1->Text.c_str ());
-  ticketSolver->Solve (Edit1->Text.c_str ());
+  if (Edit2->Text.IsEmpty() || (std::string (Edit2->Text.c_str ()).find_first_not_of ("0123456789") != std::string::npos)) {
+    std::string line = std::string ("Wrong argument ").append (Edit2->Text.c_str ()).append (", please enter only digits.");
+    TicketSolverMainForm->Memo1->Lines->Add (line.c_str ());
+    return;
+  }
+
+  const int targetResult = StrToInt (Edit2->Text);
+
+  //ticketSolver->SolveSingle (Edit1->Text.c_str (), targetResult);
+  ticketSolver->Solve (Edit1->Text.c_str (), targetResult);
   const std::list <std::string> &log = ticketSolver->getLog ();
   for (std::list <std::string>::const_iterator it = log.begin (); it != log.end (); it++) {
     TicketSolverMainForm->Memo1->Lines->Add (it->c_str ());

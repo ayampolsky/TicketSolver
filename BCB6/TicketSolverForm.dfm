@@ -50,6 +50,13 @@ object TicketSolverMainForm: TTicketSolverMainForm
       Height = 13
       Caption = 'Ticket number'
     end
+    object Label2: TLabel
+      Left = 208
+      Top = 16
+      Width = 59
+      Height = 13
+      Caption = 'Target result'
+    end
     object Edit1: TEdit
       Left = 80
       Top = 8
@@ -103,7 +110,7 @@ object TicketSolverMainForm: TTicketSolverMainForm
         8080008080008080008080008080008080008080008080008080}
     end
     object BitBtnSolve: TBitBtn
-      Left = 208
+      Left = 328
       Top = 8
       Width = 75
       Height = 25
@@ -137,6 +144,21 @@ object TicketSolverMainForm: TTicketSolverMainForm
         535353EAEAEAE5E5E5E5E5E5E5E5E5E5E5E5E5E5E5E5E5E5E5E5E5EAEAEA5353
         5300808000808000808000808000808055555555555555555555555555555555
         5555555555555555555555555555555555008080008080008080}
+    end
+    object Edit2: TEdit
+      Left = 272
+      Top = 7
+      Width = 49
+      Height = 26
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Courier New'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 3
+      Text = '100'
+      OnKeyPress = Edit1KeyPress
     end
   end
 end

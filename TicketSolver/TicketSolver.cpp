@@ -138,7 +138,7 @@ int TicketSolver::doOperation (std::list<int>::iterator max_it, std::list<Ticket
   return res;
 }
 
-int TicketSolver::iterateBrackets (int &bracketsIterations, int &bracketsSolutions, const bool silent, const bool debug)
+int TicketSolver::iterateBrackets (const int targetResult, int &bracketsIterations, int &bracketsSolutions, const bool silent, const bool debug)
 {
   // Iterate brackets sequencies and discard wrong expressions
   // 1. If there are too many brackets
@@ -244,7 +244,7 @@ int TicketSolver::iterateBrackets (int &bracketsIterations, int &bracketsSolutio
         if (!silent) {
           solution.append (" OK");
         }
-        if (numbers.front() == 100) {
+        if (numbers.front() == targetResult) {
           if (silent && !done) {            // Restart expression calculation and print expression
             done = true;
             bracketsMask--;
@@ -372,7 +372,7 @@ int TicketSolver::reduceList (std::list<int>::iterator number_begin, std::list<i
   return res;
 }
 
-int TicketSolver::SolveSingle (const std::string digits)
+int TicketSolver::SolveSingle (const std::string digits, const int targetResult)
 {
   bool res = false;
   numbers = ConvertDigits (digits);
@@ -407,7 +407,7 @@ int TicketSolver::SolveSingle (const std::string digits)
   if (useBrackets) {
     int bracketsIterations = 0;
     int bracketsSolutions = 0;
-    res = iterateBrackets (bracketsIterations, bracketsSolutions, false, false);
+    res = iterateBrackets (targetResult, bracketsIterations, bracketsSolutions, false, false);
     iterationsCalculated += bracketsIterations;
     solutionsCount += bracketsSolutions;
   }
@@ -420,7 +420,7 @@ int TicketSolver::SolveSingle (const std::string digits)
 
     if (res && (numbers.size() == 1)) {
       solution.append (" OK");
-      if (numbers.front() == 100) {
+      if (numbers.front() == targetResult) {
         solution.append (" Found!");
         solutionsCount++;
       }
@@ -442,7 +442,7 @@ int TicketSolver::SolveSingle (const std::string digits)
   return res;
 }
 
-int TicketSolver::Solve (const std::string digits)
+int TicketSolver::Solve (const std::string digits, const int targetResult)
 {
   bool res = false;
   int solutionsCount = 0;
@@ -451,7 +451,7 @@ int TicketSolver::Solve (const std::string digits)
   operations.clear ();
   log.clear ();
 
-  const int digitsCount = numbersEntered.size () - 1; 
+  const int digitsCount = numbersEntered.size () - 1;
   const int iterationsCount = pow ((float) OPER_MAX, (float) digitsCount);
 
   const clock_t startClock = clock ();
@@ -476,7 +476,7 @@ int TicketSolver::Solve (const std::string digits)
     if (useBrackets) {
       int bracketsIterations = 0;
       int bracketsSolutions = 0;
-      res = iterateBrackets (bracketsIterations, bracketsSolutions, true, false);
+      res = iterateBrackets (targetResult, bracketsIterations, bracketsSolutions, true, false);
       iterationsCalculated += bracketsIterations;
       solutionsCount += bracketsSolutions;
     }
@@ -490,7 +490,7 @@ int TicketSolver::Solve (const std::string digits)
       bool saveSolution = false;
       if (res && (numbers.size() == 1)) {
         solution.append (" OK");
-        if (numbers.front() == 100) {
+        if (numbers.front() == targetResult) {
           solution.append (" Found!");
           solutionsCount++;
           saveSolution = true;

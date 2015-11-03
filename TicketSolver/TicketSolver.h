@@ -41,15 +41,15 @@ private :
   static std::list<int> ConvertDigits (const std::string digits);
   const std::string writeExpression ();
   int doOperation (std::list<int>::iterator max_it, std::list<TicketOperation>::iterator max_op_it);
-  int iterateBrackets (int &bracketsIterations, int &bracketsSolutions, const bool silent, const bool debug = false);
+  int iterateBrackets (const int targetResult, int &bracketsIterations, int &bracketsSolutions, const bool silent, const bool debug = false);
   int reduceList (std::list<int>::iterator number_begin, std::list<int>::iterator number_end, std::list<TicketOperation>::iterator op_begin, std::list<TicketOperation>::iterator op_end, const bool silent, const int level = 0);
 
 public :
   TicketSolver ();
   ~TicketSolver ();
 
-  int SolveSingle (const std::string digits);
-  int Solve (const std::string digits);
+  int SolveSingle (const std::string digits, const int targetResult);
+  int Solve (const std::string digits, const int targetResult);
   const std::list <std::string> getLog () {return log;};
 
   static void getVersion (std::string &version, std::string &description, std::string &author);

@@ -19,6 +19,8 @@ __published:	// IDE-managed Components
         TEdit *Edit1;
         TBitBtn *BitBtnAbout;
         TBitBtn *BitBtnSolve;
+        TLabel *Label2;
+        TEdit *Edit2;
         void __fastcall FormCreate(TObject *Sender);
         void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
         void __fastcall Memo1KeyDown(TObject *Sender, WORD &Key,
