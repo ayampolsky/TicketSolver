@@ -18,7 +18,7 @@ on modern processor for reasonable time.
 classes
 -------
 
-this program takes string of digits as a parameter and finds expression with a
+This program takes string of digits as a parameter and finds expression with a
 result of 100. TicketSolver class is rather flexible and can be used separately
 in other projects.
 
@@ -38,7 +38,7 @@ compiling
 ---------
 
 For Windows open project file with corresponding IDE and select Build from the
-menu. For Linux Makefilew is provided, go to linux directory and run make.
+menu. For Linux Makefile is provided, go to linux directory and run make.
   cd linux
   make
 
