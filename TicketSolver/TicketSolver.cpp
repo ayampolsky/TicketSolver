@@ -5,7 +5,11 @@
 #include <math.h>
 #include <time.h>
 #include <errno.h>
-#include "..\TicketSolver\TicketSolver.h"
+#include "TicketSolver.h"
+
+#if defined(WIN32) || defined(__WIN32__)
+#define CLK_TCK CLOCKS_PER_SEC
+#endif
 
 const std::string TicketSolver::version = "1.0.0";
 const std::string TicketSolver::description = "This program finds combination of operation signs and brackets between given digits to obtain the required expression result.";
@@ -28,11 +32,13 @@ const char *TicketSolver::OperationNames [OPER_MAX] = {
   " ^ ",
   "_"};
 
+#if defined(WIN32) || defined(__WIN32__)
 int _matherr(struct _exception *e)
 {
   e->retval = std::numeric_limits<double>::quiet_NaN();
   return 1;
 }
+#endif
 
 static inline bool isnan_custom (const double f)
 {
@@ -118,7 +124,8 @@ int TicketSolver::doOperation (std::list<int>::iterator max_it, std::list<Ticket
     break;
   case OPER_POW : {
         const double f = pow (a, b);
-        if ((isnan_custom (f)) || (f != (int) f) || (errno == ERANGE) || (errno == EDOM)) {
+        //if ((isnan_custom (f)) || (f != (int) f) || (errno == ERANGE) || (errno == EDOM)) {
+        if ((isnan_custom (f)) || (f != (int) f)) {
           res = false;
         }
         else {
