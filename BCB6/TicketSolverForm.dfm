@@ -79,7 +79,7 @@ object TicketSolverMainForm: TTicketSolverMainForm
       Height = 25
       Anchors = [akTop, akRight]
       Caption = 'About'
-      TabOrder = 2
+      TabOrder = 3
       OnClick = BitBtnAboutClick
       Glyph.Data = {
         36030000424D3603000000000000360000002800000010000000100000000100
@@ -115,7 +115,7 @@ object TicketSolverMainForm: TTicketSolverMainForm
       Width = 75
       Height = 25
       Caption = 'Solve'
-      TabOrder = 1
+      TabOrder = 2
       OnClick = BitBtnSolveClick
       Glyph.Data = {
         36030000424D3603000000000000360000002800000010000000100000000100
@@ -156,7 +156,7 @@ object TicketSolverMainForm: TTicketSolverMainForm
       Font.Name = 'Courier New'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 3
+      TabOrder = 1
       Text = '100'
       OnKeyPress = Edit1KeyPress
     end
