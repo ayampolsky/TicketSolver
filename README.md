@@ -30,6 +30,7 @@ The following operation systems and compilers are supported:
 * Windows / Borland C++ Builder 6
 * Windows / Microsoft Visual Studio 2013
 * Linux / g++
+* Mac OS / LLVM
 
 Project for C++ Builder 6 creates executable with GUI. Others create executable
 with CLI.
