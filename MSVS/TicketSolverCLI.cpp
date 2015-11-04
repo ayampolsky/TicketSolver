@@ -7,12 +7,12 @@
 int main (int argc, char **argv)
 {
 	if ((argc < 2) || (argc > 3)) {
-		printf ("TicketSolverGUI [-v] [digits] [target result]\r\n");
+		printf ("TicketSolverCLI [-v] [digits] [target result]\r\n");
 		printf ("  -v            - show version\r\n");
 		printf ("  digits        - digits of ticket number\r\n");
 		printf ("  target result - target result of expression, default 100\r\n");
 		printf ("Example\r\n");
-		printf ("  TicketSolverGUI 123456\r\n");
+		printf ("  TicketSolverCLI 123456\r\n");
 		return 0;
 	}
 
