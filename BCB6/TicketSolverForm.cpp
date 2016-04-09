@@ -33,12 +33,15 @@ void __fastcall TTicketSolverMainForm::BitBtnSolveClick(TObject *Sender)
 
   const int targetResult = StrToInt (Edit2->Text);
 
+  const TCursor cursorPrev = Screen->Cursor;
+  Screen->Cursor = crHourGlass;
   //ticketSolver->SolveSingle (Edit1->Text.c_str (), targetResult);
   ticketSolver->Solve (Edit1->Text.c_str (), targetResult);
   const std::list <std::string> &log = ticketSolver->getLog ();
   for (std::list <std::string>::const_iterator it = log.begin (); it != log.end (); it++) {
     TicketSolverMainForm->Memo1->Lines->Add (it->c_str ());
   }
+  Screen->Cursor = cursorPrev;
 }
 //---------------------------------------------------------------------------
 void __fastcall TTicketSolverMainForm::FormCreate(TObject *Sender)
